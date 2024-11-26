@@ -42,8 +42,12 @@
   border-radius: 5px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   margin: 2em auto;
-  min-height: 10rem;
+
   position: relative;
+}
+
+.card:has(.answer) {
+  min-height: 15rem;
 }
 
 .answer {
@@ -51,6 +55,16 @@
   left: 2em;
   right: 2em;
   animation: cardAnimation 0.2s ease-in-out 1 forwards;
+}
+
+.answer p {
+  top: 5em;
+  max-height: 9rem;
+  overflow: auto;
+}
+
+.answer small {
+  bottom: 2em;
 }
 
 .read-the-docs {

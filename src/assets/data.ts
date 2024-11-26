@@ -12,7 +12,7 @@ export const data: Data[] = [
     id: 2339723412,
     question: 'Vad är dagis?',
     answer:
-      'Dagis är en förkortning av daghem som användes mycket under 80-90 talen. Under 90 talet började ordet förskola bli vanligare och idag ser många det som ett mer passande ord även om många fortfarande säger dagis.',
+      'Dagis är en förkortning av daghem som användes mycket under 80-90 talen. Under 90 talet började ordet förskola bli vanligare och idag ser många det som ett mer passande ord även om många fortfarande säger dagis. Dagis är en förkortning av daghem som användes mycket under 80-90 talen. Under 90 talet började ordet förskola bli vanligare och idag ser många det som ett mer passande ord även om många fortfarande säger dagis. Dagis är en förkortning av daghem som användes mycket under 80-90 talen. Under 90 talet började ordet förskola bli vanligare och idag ser många det som ett mer passande ord även om många fortfarande säger dagis. Dagis är en förkortning av daghem som användes mycket under 80-90 talen. Under 90 talet började ordet förskola bli vanligare och idag ser många det som ett mer passande ord även om många fortfarande säger dagis.',
     pedagog: 'Kicki Lindstrand',
   },
   {
