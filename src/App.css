@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  width: 100%;
 }
 
 .logo {
@@ -34,9 +35,36 @@
 }
 
 .card {
+  max-width: 50rem;
+  width: 100%;
   padding: 2em;
+  border: 1px solid grey;
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin: 2em auto;
+  min-height: 10rem;
+  position: relative;
+}
+
+.answer {
+  position: absolute;
+  left: 2em;
+  right: 2em;
+  animation: cardAnimation 0.2s ease-in-out 1 forwards;
 }
 
 .read-the-docs {
   color: #888;
+}
+
+@keyframes cardAnimation {
+  0% {
+    transform: scale(0);
+  }
+  90% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
