@@ -1,83 +1,100 @@
+* {
+  box-sizing: border-box;
+}
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
   width: 100%;
+  background-color: #f5f5dc;
+  color: #333333;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+button {
+  background-color: #f29b76;
+  color: white;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+h1,
+h2,
+h3 {
+  color: #f29b76;
+}
+
+/* 
+ljusblå: #a9cce3;
+turkosblå: #b2d7ee;
+ljusare blå: #c8e4f3; 
+ljusgrön: #A8E4A0;
+neongrön: #98fb98; 
+pastellgrön: #d2f2c9;
+#F5F5DC: En varm och ljus beige nyans.
+#E3DAC9: En något mörkare och mer gulbeige ton.
+#D2B48C: En mörkare och mer brunaktig beige färg.
+#F29B76: En varm och ljus orange färg.
+#FFA07A: En mer korallfärgad ton.
+#FF7F50: En mörkare och mer intensiv orange färg.
+
+*/
+
+.menu-section {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  color: #333333;
+  .menu-intro {
+    padding: 1rem 2rem;
+    letter-spacing: 0.02em;
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  .menu-btns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+.question-section {
+  padding: 3rem 1rem 0 1rem;
+  display: flex;
+  align-items: start;
+  text-align: left;
+  gap: 1rem;
+  background-color: #c8e4f3;
+  img,
+  .card-section {
+    max-width: 45%;
+    width: 100%;
   }
 }
-
 .card {
-  max-width: 50rem;
-  width: 100%;
-  padding: 2em;
-  border: 1px solid grey;
-  border-radius: 5px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  margin: 2em auto;
-
-  position: relative;
-}
-
-.card:has(.answer) {
-  min-height: 15rem;
+  padding: 1em 2em;
+  /* border: 1px solid #a9cce3;
+  border-radius: 5px; */
 }
 
 .answer {
-  position: absolute;
-  left: 2em;
-  right: 2em;
   animation: cardAnimation 0.2s ease-in-out 1 forwards;
 }
 
-.answer p {
+/* .answer p {
   top: 5em;
   max-height: 9rem;
   overflow: auto;
-}
-
-.answer small {
-  bottom: 2em;
-}
+} */
 
 .read-the-docs {
   color: #888;
+  background-color: #d2f2c9;
 }
 
 @keyframes cardAnimation {
   0% {
     transform: scale(0);
   }
-  90% {
-    transform: scale(1.1);
-  }
+
   100% {
     transform: scale(1);
   }

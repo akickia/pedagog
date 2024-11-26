@@ -9,7 +9,7 @@ const Card = ({ data }: CardProps) => {
   const [showAnswer, setShowAnswer] = useState(false);
 
   return (
-    <div className={`card`} onClick={() => setShowAnswer(!showAnswer)}>
+    <section className={`card`} onClick={() => setShowAnswer(!showAnswer)}>
       <p>{data.question}</p>
       {showAnswer && (
         <div className="answer">
@@ -17,7 +17,8 @@ const Card = ({ data }: CardProps) => {
           <small>Pedagog: {data.pedagog}</small>
         </div>
       )}
-    </div>
+      <hr></hr>
+    </section>
   );
 };
 

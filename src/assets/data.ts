@@ -45,7 +45,7 @@ export const data: Data[] = [
   },
   {
     id: 3128934781,
-    question: 'Vad är en utvecklingssamtal?',
+    question: 'Vad är ett utvecklingssamtal?',
     answer:
       'Ett utvecklingssamtal är ett möte mellan vårdnadshavare och pedagoger där barnets trivsel, utveckling och lärande diskuteras.',
     pedagog: 'Sofia Andersson',
