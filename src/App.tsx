@@ -1,9 +1,9 @@
 import './App.css';
 import { data } from './assets/data';
-import Card from './components/card';
 import { Menu } from './components/Menu';
 import { Data } from './types';
 import img from './assets/background-menu.jpg';
+import Card from './components/card';
 
 function App() {
   const dummieData: Data[] = data;
