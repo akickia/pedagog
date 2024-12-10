@@ -3,7 +3,7 @@ import { data } from './assets/data';
 import { Menu } from './components/Menu';
 import { Data } from './types';
 import img from './assets/background-menu.jpg';
-import Card from './components/card';
+import Card from './components/Card';
 
 function App() {
   const dummieData: Data[] = data;
