@@ -1,6 +1,6 @@
-import { Data } from '../types';
+import { Data2 } from '../types';
 
-export const data: Data[] = [
+export const data: Data2[] = [
   {
     id: 9334927124,
     question: 'Vad är inskolning?',

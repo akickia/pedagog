@@ -1,25 +1,30 @@
 import './App.css';
 import { Menu } from './components/Menu';
-import { Data } from './types';
+import { Data, Data2 } from './types';
 import img from './assets/background-menu.jpg';
 import Card from './components/Card';
-import { fetchQuestionsFromDB } from '../backend/server';
+//import { fetchQuestionsFromDB } from '../backend/server.js';
 import { useEffect, useState } from 'react';
+import { data } from './assets/data';
+
+//TODO: Remember that backend isn't online and netlify can't fetch data from it.
+//TODO: Fix import from backend/server.js when backend is online.
 
 function App() {
-  const [questions, setQuestions] = useState<Data[]>([]);
+  //const [questions, setQuestions] = useState<Data[]>([]);
+  const [questions, setQuestions] = useState<Data2[]>(data);
   console.log(questions);
 
-  useEffect(() => {
-    fetchQuestionsFromDB()
-      .then((data: Data[]) => {
-        setQuestions(data);
-        console.log('Questions fetched: ', data);
-      })
-      .catch((error: any) => {
-        console.error('Error fetching questions: ', error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetchQuestionsFromDB()
+  //     .then((data: Data[]) => {
+  //       setQuestions(data);
+  //       console.log('Questions fetched: ', data);
+  //     })
+  //     .catch((error: any) => {
+  //       console.error('Error fetching questions: ', error);
+  //     });
+  // }, []);
 
   return (
     <div className="App">

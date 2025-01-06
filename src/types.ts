@@ -3,3 +3,10 @@ export type Data = {
   A: string;
   Ped: string;
 };
+
+export type Data2 = {
+  id: number;
+  question: string;
+  answer: string;
+  pedagog: string;
+};
