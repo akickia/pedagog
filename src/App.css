@@ -3,22 +3,30 @@
 }
 #root {
   max-width: 1280px;
+  overflow: hidden;
   margin: 0 auto;
   text-align: center;
   width: 100%;
-  background-color: #f5f5dc;
+
   color: #333333;
 }
 
 button {
-  background-color: #f29b76;
+  background-color: #97614a;
   color: white;
+}
+.secondary {
+  border: 1px solid #97614a;
+  color: #684333;
+  background-color: transparent;
+  font-size: small;
+  margin-left: auto;
 }
 
 h1,
 h2,
 h3 {
-  color: #f29b76;
+  color: #684333;
 }
 
 /* 
@@ -37,6 +45,10 @@ pastellgrön: #d2f2c9;
 
 */
 
+.start-section {
+  position: relative;
+}
+
 .menu-section {
   min-height: 50vh;
   display: flex;
@@ -50,8 +62,9 @@ pastellgrön: #d2f2c9;
     width: 100%;
   }
   .menu-btns {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     gap: 1.5rem;
   }
 }
@@ -59,18 +72,21 @@ pastellgrön: #d2f2c9;
 .question-section {
   padding: 3rem 1rem 0 1rem;
   display: flex;
+  flex-direction: column;
   align-items: start;
   text-align: left;
   gap: 1rem;
   background-color: #c8e4f3;
   img,
   .card-section {
-    max-width: 45%;
+    max-width: 100%;
     width: 100%;
   }
 }
-.card {
-  padding: 1em 2em;
+
+.card,
+img {
+  padding: 1em;
   cursor: pointer;
   /* border: 1px solid #a9cce3;
   border-radius: 5px; */
@@ -86,9 +102,44 @@ pastellgrön: #d2f2c9;
   overflow: auto;
 } */
 
-.read-the-docs {
-  color: #888;
+.about-section {
   background-color: #d2f2c9;
+  padding: 2rem 1rem;
+}
+
+.form-section {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  right: 1rem;
+  transform: translateY(-50%);
+  min-height: 50vh;
+  background-color: white;
+  .close {
+    text-align: end;
+    padding: 1rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    input,
+    textarea {
+      padding: 0.5rem;
+      border: 1px solid #a9cce3;
+      border-radius: 5px;
+      font-family: unset;
+    }
+    button {
+      background-color: #a9cce3;
+      color: white;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
 }
 
 @keyframes cardAnimation {
@@ -98,5 +149,24 @@ pastellgrön: #d2f2c9;
 
   100% {
     transform: scale(1);
+  }
+}
+
+@media (min-width: 768px) {
+  .question-section {
+    flex-direction: row;
+    .card-section,
+    img {
+      max-width: 45%;
+    }
+    .card,
+    img {
+      padding: 1em 2em;
+    }
+  }
+  .form-section {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }

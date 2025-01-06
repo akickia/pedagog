@@ -10,11 +10,11 @@ const Card = ({ data }: CardProps) => {
 
   return (
     <section className={`card`} onClick={() => setShowAnswer(!showAnswer)}>
-      <p>{data.question}</p>
+      <p>{data.Q}</p>
       {showAnswer && (
         <div className="answer">
-          <p>{data.answer}</p>
-          <small>Pedagog: {data.pedagog}</small>
+          <p>{data.A}</p>
+          <small>Pedagog: {data.Ped}</small>
         </div>
       )}
       <hr></hr>
