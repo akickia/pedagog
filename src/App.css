@@ -11,6 +11,14 @@
   color: #333333;
 }
 
+.alert {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+}
 button {
   background-color: #97614a;
   color: white;
@@ -70,17 +78,42 @@ pastellgrön: #d2f2c9;
 }
 
 .question-section {
-  padding: 3rem 1rem 0 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  text-align: left;
-  gap: 1rem;
   background-color: #c8e4f3;
-  img,
-  .card-section {
-    max-width: 100%;
-    width: 100%;
+  nav ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    gap: 2px;
+    background-color: #68433324;
+    a {
+      text-decoration: none;
+      color: #684333;
+      padding: 1rem;
+      width: 100%;
+      background-color: #c8e4f3;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    a.active {
+      background-color: #a9d6ef;
+      color: #5b2e1a;
+    }
+  }
+  .questions-section {
+    padding: 3rem 1rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: left;
+    gap: 1rem;
+
+    img,
+    .card-section {
+      max-width: 100%;
+      width: 100%;
+    }
   }
 }
 
@@ -154,19 +187,39 @@ img {
 
 @media (min-width: 768px) {
   .question-section {
-    flex-direction: row;
-    .card-section,
-    img {
-      max-width: 45%;
+    nav ul {
+      a {
+        font-size: 14px;
+      }
     }
-    .card,
-    img {
-      padding: 1em 2em;
+    .questions-section {
+      flex-direction: row;
+      .card-section,
+      img {
+        max-width: 45%;
+      }
+      .card,
+      img {
+        padding: 1em 2em;
+      }
     }
   }
   .form-section {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .question-section {
+    nav {
+      ul {
+        a {
+          padding: 0.5rem;
+          font-size: 10px;
+        }
+      }
+    }
   }
 }

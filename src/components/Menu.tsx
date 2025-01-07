@@ -30,7 +30,7 @@ export const Menu = () => {
           )}
         </section>
       </article>
-      <article className="about-section">
+      <article className={showAbout ? 'about-section' : ''}>
         {showAbout && (
           <>
             <button className="secondary" onClick={() => setShowAbout(false)}>
