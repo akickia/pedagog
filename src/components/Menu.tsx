@@ -7,7 +7,7 @@ export const Menu = () => {
   const [showAbout, setShowAbout] = useState(false);
   return (
     <>
-      <article className="menu-section">
+      <article className={'menu-section' + (showForm ? ' blur' : '')}>
         <section className="menu-intro">
           <p>
             Ny till förskolans värld? Eller har du någonsin undrat något om

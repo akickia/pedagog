@@ -53,6 +53,9 @@ pastellgrön: #d2f2c9;
 
 */
 
+.blur {
+  filter: blur(3px);
+}
 .start-section {
   position: relative;
 }
@@ -147,7 +150,9 @@ img {
   right: 1rem;
   transform: translateY(-50%);
   min-height: 50vh;
-  background-color: white;
+  background-color: #d2f2c9;
+  z-index: 100;
+  filter: drop-shadow(2px 4px 6px black);
   .close {
     text-align: end;
     padding: 1rem;
@@ -164,13 +169,20 @@ img {
       border-radius: 5px;
       font-family: unset;
     }
+    input:hover,
+    textarea:hover {
+      border: 1px solid #57a8de;
+    }
     button {
-      background-color: #a9cce3;
+      background-color: #57a8de;
       color: white;
       padding: 0.5rem;
       border: none;
       border-radius: 5px;
       cursor: pointer;
+    }
+    button:hover {
+      background-color: #3197db;
     }
   }
 }
@@ -205,9 +217,14 @@ img {
     }
   }
   .form-section {
-    left: 50%;
+    left: 4rem;
+    right: 4rem;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(0, 0);
+    form {
+      max-width: 70%;
+      margin: auto;
+    }
   }
 }
 
