@@ -1,26 +1,25 @@
-import { Data, Data2 } from '../types';
+import { Question } from '../types';
 import img from '../assets/background-menu.jpg';
 import Card from './Card';
-//import { fetchQuestionsFromDB } from '../backend/server.js';
 import { useEffect, useState } from 'react';
-import { data } from '../assets/data';
 import { QuestionsNav } from './QuestionsNav';
+import axios from 'axios';
 
+const url = import.meta.env.VITE_API_URL;
 export const Questions = () => {
-  //const [questions, setQuestions] = useState<Data[]>([]);
-  const [questions, setQuestions] = useState<Data2[]>(data);
-  console.log(questions);
+  const [questions, setQuestions] = useState<Question[]>([]);
 
-  // useEffect(() => {
-  //   fetchQuestionsFromDB()
-  //     .then((data: Data[]) => {
-  //       setQuestions(data);
-  //       console.log('Questions fetched: ', data);
-  //     })
-  //     .catch((error: any) => {
-  //       console.error('Error fetching questions: ', error);
-  //     });
-  // }, []);
+  useEffect(() => {
+    axios
+      .get(`${url}/question/all`)
+      .then((response) => {
+        console.log(response.data.questions);
+        setQuestions(response.data.questions);
+      })
+      .catch((error) => {
+        console.error('Error fetching questions: ', error);
+      });
+  }, []);
 
   return (
     <article className="question-section">

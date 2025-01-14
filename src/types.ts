@@ -1,10 +1,4 @@
-export type Data = {
-  Q: string;
-  A: string;
-  Ped: string;
-};
-
-export type Data2 = {
+export type Question = {
   id: number;
   question: string;
   answer: string;
