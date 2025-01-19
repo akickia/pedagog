@@ -2,9 +2,7 @@ import './App.css';
 import { Menu } from './components/Menu';
 import { Questions } from './components/Questions';
 import { Footer } from './components/Footer';
-
-//TODO: Remember that backend isn't online and netlify can't fetch data from it.
-//TODO: Fix import from backend/server.js when backend is online.
+//import { Teacher } from './components/Teacher';
 
 function App() {
   return (
@@ -15,6 +13,7 @@ function App() {
           OBS! UNDER UTVECKLING! <br></br> Svar, frågor och namn är ännu
           fiktiva/ genererade och alltså inte korrekta.
         </p>
+        {/* <Teacher /> */}
         <Menu />
       </article>
       <Questions />

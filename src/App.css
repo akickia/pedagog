@@ -141,6 +141,8 @@ img {
 .about-section {
   background-color: #d2f2c9;
   padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-section {
@@ -184,6 +186,15 @@ img {
     button:hover {
       background-color: #3197db;
     }
+  }
+}
+
+.teacher-section {
+  .btn-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1.5rem;
   }
 }
 

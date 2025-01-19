@@ -14,7 +14,7 @@ const Card = ({ data }: CardProps) => {
       {showAnswer && (
         <div className="answer">
           <p>{data.answer}</p>
-          <small>Pedagog: {data.pedagog}</small>
+          <small>Pedagog: {data.teacher}</small>
         </div>
       )}
       <hr></hr>

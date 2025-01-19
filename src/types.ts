@@ -1,6 +1,6 @@
 export type Question = {
-  id: number;
+  id: string;
   question: string;
   answer: string;
-  pedagog: string;
+  teacher: string;
 };

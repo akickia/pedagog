@@ -22,7 +22,6 @@ export const Menu = () => {
           <button onClick={() => setShowForm((state) => !state)}>
             Ställ en fråga
           </button>
-          <button>Svara på en fråga</button>
           {!showAbout && (
             <button onClick={() => setShowAbout((state) => !state)}>
               Mer om sidan
@@ -33,8 +32,11 @@ export const Menu = () => {
       <article className={showAbout ? 'about-section' : ''}>
         {showAbout && (
           <>
-            <button className="secondary" onClick={() => setShowAbout(false)}>
-              Stäng info
+            <button
+              className="closeBtn secondary"
+              onClick={() => setShowAbout(false)}
+            >
+              X
             </button>{' '}
             <About />
           </>
