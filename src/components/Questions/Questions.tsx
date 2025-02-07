@@ -1,9 +1,10 @@
-import { Question } from '../types';
-import img from '../assets/background-menu.jpg';
+import { Question } from '../../assets/types';
+import img from '../../assets/background-menu.jpg';
 import Card from './Card';
 import { useEffect, useState } from 'react';
 import { QuestionsNav } from './QuestionsNav';
 import axios from 'axios';
+import './Questions.css';
 
 const url = import.meta.env.VITE_API_URL;
 export const Questions = () => {

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Question } from '../types';
+import { Question } from '../../assets/types';
 
 type CardProps = {
   data: Question;
@@ -9,7 +9,12 @@ const Card = ({ data }: CardProps) => {
   const [showAnswer, setShowAnswer] = useState(false);
 
   return (
-    <section className={`card`} onClick={() => setShowAnswer(!showAnswer)}>
+    <section
+      className={`card`}
+      tabIndex={0}
+      onClick={() => setShowAnswer(!showAnswer)}
+      onBlur={() => setShowAnswer(false)}
+    >
       <p>{data.question}</p>
       {showAnswer && (
         <div className="answer">
