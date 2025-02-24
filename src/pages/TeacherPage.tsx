@@ -4,6 +4,7 @@ import { url } from '../assets/helpers';
 import { TeacherHero } from '../components/Teacher/TeacherHero';
 import { Form } from '../base/Form/Form';
 import { useNavigate } from 'react-router-dom';
+import { Questions } from '../components/Questions/Questions';
 
 export const TeacherPage = () => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
@@ -51,7 +52,11 @@ export const TeacherPage = () => {
     <main>
       <article className="teacher-section">
         {isLoggedIn ? (
-          <TeacherHero />
+          <>
+            <h1>Fråga pedagogen</h1>
+            <h3>ADMINSIDA</h3>
+            <TeacherHero />
+          </>
         ) : (
           <article className="form-section">
             <button className="close secondary" onClick={() => navigate('/')}>

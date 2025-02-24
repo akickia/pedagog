@@ -5,10 +5,12 @@ import { useEffect, useState } from 'react';
 import { QuestionsNav } from './QuestionsNav';
 import axios from 'axios';
 import './Questions.css';
+import { useParams } from 'react-router-dom';
 
 const url = import.meta.env.VITE_API_URL;
 export const Questions = () => {
   const [questions, setQuestions] = useState<Question[]>([]);
+  const { keywords } = useParams();
 
   useEffect(() => {
     axios
@@ -20,18 +22,29 @@ export const Questions = () => {
       .catch((error) => {
         console.error('Error fetching questions: ', error);
       });
-  }, []);
+
+    console.log('Keywords from URL:', keywords);
+    console.log('Verified questions:', verifiedQuestions);
+    console.log('Filtered questions:', filteredQuestions);
+  }, [keywords]);
+
+  const verifiedQuestions = questions.filter((q) => q.isVerified === true);
+  // Filtrera frågor baserat på kategori från URL
+  const filteredQuestions =
+    keywords && keywords !== 'all'
+      ? verifiedQuestions.filter((q) => q.keywords.includes(keywords)) // Kolla om nyckelordet finns i listan
+      : verifiedQuestions;
 
   return (
     <article className="question-section">
       <QuestionsNav />
       <section className="questions-section">
-        <img src={img}></img>
+        <img src={img} alt="Background" />
         <section className="card-section">
-          {questions.length > 0 ? (
-            questions.map((data, i) => <Card data={data} key={i} />)
+          {filteredQuestions.length > 0 ? (
+            filteredQuestions.map((data, i) => <Card data={data} key={i} />)
           ) : (
-            <p>Hämtar frågor... </p>
+            <p>Inga frågor i denna kategori.</p>
           )}
         </section>
       </section>

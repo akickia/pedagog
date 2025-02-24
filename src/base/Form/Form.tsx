@@ -19,6 +19,7 @@ export const Form = ({ form, placeholder, input, close }: FormProps) => {
   const [confirmationMsg, setConfirmationMsg] = useState<string>('');
 
   useEffect(() => {
+    console.log('In form');
     let timer: ReturnType<typeof setTimeout>;
     if (showConfirmation) {
       timer = setTimeout(() => {
@@ -71,7 +72,7 @@ export const Form = ({ form, placeholder, input, close }: FormProps) => {
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       {!input && (
         <textarea
           onChange={(e) => handleChange(e, setText)}
@@ -112,7 +113,6 @@ export const Form = ({ form, placeholder, input, close }: FormProps) => {
             ? 'Logga in'
             : 'Klar'
         }
-        action={() => handleSubmit}
       />
 
       {showConfirmation && <p>{confirmationMsg}</p>}

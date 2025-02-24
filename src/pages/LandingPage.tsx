@@ -1,5 +1,5 @@
+import { Outlet } from 'react-router-dom';
 import { Menu } from '../components/Hero/Menu';
-import { Questions } from '../components/Questions/Questions';
 
 export const LandingPage = () => {
   return (
@@ -12,7 +12,7 @@ export const LandingPage = () => {
         </p>
         <Menu />
       </article>
-      <Questions />
+      <Outlet />
     </main>
   );
 };

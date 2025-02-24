@@ -3,4 +3,7 @@ export type Question = {
   question: string;
   answer: string;
   teacher: string;
+  createdAt: string;
+  keywords: string[];
+  isVerified: boolean;
 };

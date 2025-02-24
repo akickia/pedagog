@@ -4,7 +4,7 @@ type ButtonProps = {
   type: string;
   text: string;
   disabled?: boolean;
-  action: () => void;
+  action?: () => void;
 };
 export const Button = ({ type, text, disabled, action }: ButtonProps) => {
   return (
