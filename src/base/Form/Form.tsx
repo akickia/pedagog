@@ -72,7 +72,7 @@ export const Form = ({ form, placeholder, input, close }: FormProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={showConfirmation ? 'green' : ''}>
       {!input && (
         <textarea
           onChange={(e) => handleChange(e, setText)}

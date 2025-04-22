@@ -4,6 +4,7 @@ export type Question = {
   answer: string;
   teacher: string;
   createdAt: string;
-  keywords: string[];
+  tags: string[];
   isVerified: boolean;
+  changedAt: string;
 };

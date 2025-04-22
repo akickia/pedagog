@@ -18,6 +18,8 @@
 
 main {
   flex: 1;
+  display: grid;
+  gap: 2rem
 }
 
 .alert {
@@ -41,6 +43,12 @@ img {
 
 footer {
   padding: 1rem;
+  .links {
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 
 /* 
@@ -66,24 +74,13 @@ pastellgrön: #d2f2c9;
   position: relative;
 }
 
-.menu-section {
-  min-height: 50vh;
+
+
+.menu-btns {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: space-around;
-  color: #333333;
-  .menu-intro {
-    padding: 1rem 2rem;
-    letter-spacing: 0.02em;
-    width: 100%;
-  }
-  .menu-btns {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 1.5rem;
-  }
+  gap: 1.5rem;
 }
 
 .about-section {
@@ -106,6 +103,10 @@ pastellgrön: #d2f2c9;
   display: flex;
   flex-direction: column;
   padding: 1rem;
+}
+
+.form-section:has(.green) {
+  background-color: #d2f2c9;
 }
 
 .teacher-section {

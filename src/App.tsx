@@ -11,8 +11,9 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<LandingPage />}>
-            <Route path="questions/:keywords" element={<Questions />} />
-            <Route path="*" element={<Navigate to="questions/all" />} />
+          <Route index element={<Navigate to="questions/all" replace />} />
+          <Route path="questions/:keywords" element={<Questions />} />
+            
           </Route>
           <Route path="/admin" element={<TeacherPage />} />
         </Routes>

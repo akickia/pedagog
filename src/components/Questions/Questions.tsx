@@ -26,13 +26,13 @@ export const Questions = () => {
     console.log('Keywords from URL:', keywords);
     console.log('Verified questions:', verifiedQuestions);
     console.log('Filtered questions:', filteredQuestions);
-  }, [keywords]);
+  }, []);
 
   const verifiedQuestions = questions.filter((q) => q.isVerified === true);
   // Filtrera frågor baserat på kategori från URL
   const filteredQuestions =
     keywords && keywords !== 'all'
-      ? verifiedQuestions.filter((q) => q.keywords.includes(keywords)) // Kolla om nyckelordet finns i listan
+      ? verifiedQuestions.filter((q) => q.tags.includes(keywords)) // Kolla om nyckelordet finns i listan
       : verifiedQuestions;
 
   return (

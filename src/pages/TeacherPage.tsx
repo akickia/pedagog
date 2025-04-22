@@ -5,10 +5,13 @@ import { TeacherHero } from '../components/Teacher/TeacherHero';
 import { Form } from '../base/Form/Form';
 import { useNavigate } from 'react-router-dom';
 import { Questions } from '../components/Questions/Questions';
+import { TeacherQuestions } from '../components/Teacher/TeacherQuestions';
+import { TeacherQuestionsNav } from '../components/Teacher/TeacherQuestionsNav';
 
 export const TeacherPage = () => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [showLoginForm, setShowLoginForm] = useState<boolean>(true);
+  const [questionType, setQuestionType] = useState<string>('all');
 
   const navigate = useNavigate();
   //UseEffect to check if user is logged in
@@ -55,7 +58,12 @@ export const TeacherPage = () => {
           <>
             <h1>Fråga pedagogen</h1>
             <h3>ADMINSIDA</h3>
-            <TeacherHero />
+            <TeacherQuestionsNav />
+          
+          <article>
+            <h2>Frågor</h2>
+            <TeacherQuestions questionType={questionType} />
+          </article>
           </>
         ) : (
           <article className="form-section">

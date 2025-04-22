@@ -1,10 +1,9 @@
-export const TeacherHero = () => {
+export const TeacherHero = ({setQuestionType} : any) => {
   return (
     <section className="btn-section">
-      <button className="primary">Se alla frågor</button>
-      <button className="secondary">Se obesvarade frågor</button>
-      <button className="action">Se raporterade frågor</button>
-      <button className="close secondary">X</button>
+      <button className="primary" onClick={setQuestionType('all')}>Se alla frågor</button>
+      <button className="secondary" onClick={setQuestionType('unanswered')}>Se obesvarade frågor</button>
+      <button className="action" onClick={setQuestionType('reported')}>Se raporterade frågor</button>
     </section>
   );
 };
