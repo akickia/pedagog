@@ -4,6 +4,7 @@ import { Button } from '../base/Button/Button';
 import { About } from '../components/About/About';
 import { Form } from '../base/Form/Form';
 import { useState } from 'react';
+import { FormSection } from '../base/Form/FormSection';
 
 export const LandingPage = () => {
   const [showForm, setShowForm] = useState(false);
@@ -20,21 +21,21 @@ export const LandingPage = () => {
         <Hero />
       </article>
       <Outlet />
-              <section className="menu-btns">
-                <Button
-                  type={'primary'}
-                  text="Ställ en fråga"
-                  action={() => setShowForm((state) => !state)}
-                />
-                {!showAbout && (
-                  <Button
-                    type={'primary'}
-                    text="Mer om sidan"
-                    action={() => setShowAbout((state) => !state)}
-                  />
-                )}
-              </section>
-              {showAbout && (
+      <section className="menu-btns">
+        <Button
+          type={'primary'}
+          text="Ställ en fråga"
+          action={() => setShowForm((state) => !state)}
+        />
+        {!showAbout && (
+          <Button
+            type={'primary'}
+            text="Mer om sidan"
+            action={() => setShowAbout((state) => !state)}
+          />
+        )}
+      </section>
+      {showAbout && (
         <article className="about-section">
           <Button
             type="close secondary"
@@ -46,28 +47,19 @@ export const LandingPage = () => {
       )}
 
       {showForm && (
-        <article className="form-section">
-          <Button
-            type="close secondary"
-            text="X"
-            action={() => setShowForm(false)}
-          />
-
-          <h2>Ställ din fråga om förskolan</h2>
-          <p>
-            Här kan du ställa en fråga om förskolan och förskolans verksamhet.
-            Ingen fråga är för liten eller stor. Tänk på att vi inte kan svara
-            på frågor om hur just er förskola gör, utan svarar utifrån allmänna
-            råd och läroplaner. Lämna aldrig ut information om den enskilda
-            förskolan eller enskilda barn av integritetsskäl.{' '}
-          </p>
-          <p>Vår ambition är att svara på din fråga inom en vecka.</p>
+        <FormSection
+          heading={'Ställ din fråga om förskolan'}
+          text={
+            'Här kan du ställa en fråga om förskolan och förskolans verksamhet. Ingen fråga är för liten eller stor. Tänk på att vi inte kan svara på frågor om hur just er förskola gör, utan svarar utifrån allmänna råd och läroplaner. Lämna aldrig ut information om den enskilda förskolan eller enskilda barn av integritetsskäl. Vår ambition är att svara på din fråga inom en vecka.'
+          }
+          onClose={() => setShowForm(false)}
+        >
           <Form
             form="addQuestion"
-            placeholder="Ställ din fråga här"
+            placeholder="Ställ din fråga om förskolan"
             close={setShowForm}
           />
-        </article>
+        </FormSection>
       )}
     </main>
   );

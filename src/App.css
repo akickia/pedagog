@@ -19,7 +19,7 @@
 main {
   flex: 1;
   display: grid;
-  gap: 2rem
+  gap: 2rem;
 }
 
 .alert {
@@ -74,8 +74,6 @@ pastellgrön: #d2f2c9;
   position: relative;
 }
 
-
-
 .menu-btns {
   display: flex;
   flex-wrap: wrap;
@@ -105,7 +103,7 @@ pastellgrön: #d2f2c9;
   padding: 1rem;
 }
 
-.form-section:has(.green) {
+.form-section:has(.greenBg) {
   background-color: #d2f2c9;
 }
 

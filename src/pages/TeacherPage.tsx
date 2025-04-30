@@ -1,19 +1,17 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { url } from '../assets/helpers';
-import { TeacherHero } from '../components/Teacher/TeacherHero';
 import { Form } from '../base/Form/Form';
 import { useNavigate } from 'react-router-dom';
-import { Questions } from '../components/Questions/Questions';
 import { TeacherQuestions } from '../components/Teacher/TeacherQuestions';
 import { TeacherQuestionsNav } from '../components/Teacher/TeacherQuestionsNav';
+import { FormSection } from '../base/Form/FormSection';
 
 export const TeacherPage = () => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [showLoginForm, setShowLoginForm] = useState<boolean>(true);
-  const [questionType, setQuestionType] = useState<string>('all');
-
   const navigate = useNavigate();
+
   //UseEffect to check if user is logged in
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -58,26 +56,26 @@ export const TeacherPage = () => {
           <>
             <h1>Fråga pedagogen</h1>
             <h3>ADMINSIDA</h3>
-            <TeacherQuestionsNav />
-          
-          <article>
-            <h2>Frågor</h2>
-            <TeacherQuestions questionType={questionType} />
-          </article>
+            {/* <TeacherQuestionsNav /> */}
+
+            <article>
+              <h2>Frågor</h2>
+              <TeacherQuestions />
+            </article>
           </>
         ) : (
-          <article className="form-section">
-            <button className="close secondary" onClick={() => navigate('/')}>
-              X
-            </button>
-            <h2>Logga in</h2>
+          <FormSection
+            heading={'Logga in'}
+            text="Logga in för att kunna besvara frågor"
+            onClose={() => navigate('/')}
+          >
             <Form
-              form="logIn"
+              form={'logIn'}
               placeholder="email"
-              input={true}
+              input
               close={setShowLoginForm}
             />
-          </article>
+          </FormSection>
         )}
       </article>
     </main>
